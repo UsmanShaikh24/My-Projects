@@ -1,0 +1,229 @@
+/* General body styles */
+body {
+    background-color: #f4f6f9;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    margin-top: 30px;
+    max-width: 900px;
+    padding: 0 15px;
+}
+
+/* Title styles */
+.title {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Form styles */
+form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Form group styles */
+form .form-group {
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Input and textarea styles */
+input[type="text"], input[type="email"], textarea {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+/* Button styles */
+.btn {
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-warning {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom black button */
+.btn-back, .btn-secondary {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-back:hover, .btn-secondary:hover {
+    background-color: #333333;
+}
+
+/* Alert styles */
+.alert {
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* Pagination styles */
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff;
+}
+
+.page-link {
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+/* Additional styles for form feedback */
+input:invalid, textarea:invalid {
+    border-color: #dc3545;
+}
+
+input:valid, textarea:valid {
+    border-color: #28a745;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 1px 0; /* Adjusted padding for better appearance */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1px;
+}
+
+/* Search form styles */
+.search-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center; /* Center the search form horizontally */
+}
+
+.search-form {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    width: 100%;
+    /* Limit the width of the search form */
+}
+
+.search-input {
+    flex: 1; /* Make input take up remaining space */
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    margin-left: 10px; /* Space between input and button container */
+}
+
+.search-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
