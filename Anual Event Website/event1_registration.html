@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="VI Logo png.png" alt="Left Logo" id="headerim1">
+        <div class="college-info">
+            <div class="managing-society">Bansilal Ramnath Agarwal Charitable Trust's</div>
+            <div class="college-name">Vishwakarma Institute Of Information Technology, Pune</div>
+            <div class="university-affiliation">(An Autonomous Institute affiliated to Savitribai Phule Pune University)</div>
+        </div>
+        <img src="VIIT Sports Logo.png" alt="Right Logo" id="headerim2">
+    </div>
+    <div class="registration-container">
+        <h1>Student Registration</h1>
+        <div id="form-container">
+            <form class="student-form" id="studentForm">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="middleName">Middle Name:</label>
+                    <input type="text" id="middleName" name="middleName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="prn">PRN No.:</label>
+                    <input type="text" id="prn" name="prn" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Studying Year:</label>
+                    <select id="year" name="year" required>
+                        <option value="select">Select</option>
+                        <option value="2nd">SY</option>
+                        <option value="3rd">TY</option>
+                        <option value="4th">B.Tech</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <select id="department" name="department" required>
+                        <option value="select">Select</option>
+                        <option value="2nd">Computer</option>
+                        <option value="3rd">IT</option>
+                        <option value="4th">Mechanical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rollNo">Roll No.:</label>
+                    <input type="text" id="rollNo" name="rollNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobileNo">Mobile No.:</label>
+                    <input type="tel" id="mobileNo" name="mobileNo" required>
+                </div>
+                <button type="submit" id="submitBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pop-up Message -->
+    <div id="popupMessage" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p>Thank you for registering!</p>
+        </div>
+    </div>
+
+
+    <!-- Add more dots for more frequent floating effect -->
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

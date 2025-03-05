@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Dice Roll Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Dice Roll Simulator</h1>
+
+        <!-- Dice Type Selector -->
+        <h3>Standard Dice</h3>
+        <label for="diceType">Dice Type:</label>
+        <select id="diceType">
+            <option value="6">6-sided</option>
+            <option value="10">10-sided</option>
+            <option value="20">20-sided</option>
+        </select>
+
+        <label for="numDice">Number of Dice:</label>
+        <input type="number" id="numDice" value="1" min="1">
+
+        <label for="numRolls">Number of Rolls:</label>
+        <input type="number" id="numRolls" value="1000" min="1">
+
+        <button onclick="rollDice()">Roll Dice</button>
+        
+        <h3>Create a Custom Die</h3>
+        <label for="numSides">Number of Sides:</label>
+        <input type="number" id="numSides" value="6" min="2" onchange="generateCustomDieInputs()">
+
+        <div id="customDieContainer"></div>
+        <button onclick="rollCustomDice()">Roll Custom Dice</button>
+
+        <h3>Results:</h3>
+<div id="standardResults"></div>  <!-- Container for standard dice results -->
+<div id="customResults"></div>     <!-- Container for custom dice results -->
+
+
+        <h3>Dice Roll Distribution</h3>
+        <canvas id="diceChart" width="400" height="200"></canvas>
+
+        <h3>Comparison Between Different Dice</h3>
+        <label for="diceType1">Dice Type 1:</label>
+        <select id="diceType1">
+            <option value="6">6-sided</option>
+            <option value="10">10-sided</option>
+            <option value="20">20-sided</option>
+        </select>
+
+        <label for="diceType2">Dice Type 2:</label>
+        <select id="diceType2">
+            <option value="6">6-sided</option>
+            <option value="10">10-sided</option>
+            <option value="20">20-sided</option>
+        </select>
+
+        <button onclick="compareDice()">Compare Dice</button>
+        <canvas id="comparisonChart" width="400" height="200"></canvas>
+
+        <h3>Dice Roll History</h3>
+        <div id="rollHistory"></div>
+
+        <h3>Graph Customization</h3>
+        <label for="chartColor">Select Chart Color:</label>
+        <input type="color" id="chartColor" value="#ff6384">
+
+        <button onclick="downloadResults()">Download Results</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

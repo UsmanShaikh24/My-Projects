@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Dice Roller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Animated Dice Roller</h1>
+        <div class="dice" id="dice">🎲</div>
+        <button onclick="rollDice()">Roll Dice</button>
+        
+        <h3>Roll Results:</h3>
+        <p id="result"></p>
+
+        <h3>Statistics:</h3>
+        <div id="statistics">
+            <p><strong>Mean:</strong> <span id="mean"></span></p>
+            <p><strong>Median:</strong> <span id="median"></span></p>
+            <p><strong>Variance:</strong> <span id="variance"></span></p>
+            <p><strong>Standard Deviation:</strong> <span id="stdDeviation"></span></p>
+        </div>
+
+        <h3>Roll History:</h3>
+        <div id="rollHistory"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

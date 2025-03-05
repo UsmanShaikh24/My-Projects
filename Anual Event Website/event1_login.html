@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event 1 - Game Rules</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="VI Logo png.png" alt="Left Logo" id="headerim1">
+        <div class="college-info">
+            <div class="managing-society">Bansilal Ramnath Agarwal Charitable Trust's</div>
+            <div class="college-name">Vishwakarma Institute Of Information Technology, Pune</div>
+            <div class="university-affiliation">(An Autonomous Institute affiliated to Savitribai Phule Pune University)</div>
+        </div>
+        <img src="VIIT Sports Logo.png" alt="Right Logo" id="headerim2">
+    </div>
+
+    <div class="game-name">
+        <h1>Football</h1>
+    </div>
+
+    <!-- Main Event Section -->
+    <div class="event1-section">
+        <div class="game-rules">
+            <h2>Game Rules</h2>
+            <ul class="rules-list">
+                <li>Rule 1: Lorem ipsum dolor sit amet.</li>
+                <li>Rule 2: Consectetur adipiscing elit.</li>
+                <li>Rule 3: Sed do eiusmod tempor incididunt.</li>
+                <li>Rule 4: Ut labore et dolore magna aliqua.</li>
+                <li>Rule 5: Ut enim ad minim veniam.</li>
+            </ul>
+        </div>
+        <div class="login-form">
+            <h2>Student Login</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-container">
+                    <button type="submit">Login</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+
+    <!-- Podium Section -->
+    <div class="podium" role="complementary" aria-label="Competition Podium">
+        <div id="firstPlace" class="first-place podium-item" tabindex="0" aria-labelledby="firstRank firstDepartment">
+            <span id="firstRank" class="rank">1</span>
+            <div id="firstDepartment" class="department">CSE-AI & CSE-DS</div>
+            <div class="medal gold-medal" role="img" aria-label="Gold Medal"></div>
+        </div>
+        <div id="secondPlace" class="second-place podium-item" tabindex="0" aria-labelledby="secondRank secondDepartment">
+            <span id="secondRank" class="rank">2</span>
+            <div id="secondDepartment" class="department">CSE-AIML & CSE-IOT & CSE-SE</div>
+            <div class="medal silver-medal" role="img" aria-label="Silver Medal"></div>
+        </div>
+        <div id="thirdPlace" class="third-place podium-item" tabindex="0" aria-labelledby="thirdRank thirdDepartment">
+            <span id="thirdRank" class="rank">3</span>
+            <div id="thirdDepartment" class="department">MECH</div>
+            <div class="medal bronze-medal" role="img" aria-label="Bronze Medal"></div>
+        </div>
+    </div>
+
+    <script>
+        // Add a simple click event to each podium item for more interaction
+        document.querySelectorAll('.podium-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const rank = item.querySelector('.rank').textContent;
+                const department = item.querySelector('.department').textContent;
+                alert(`Rank: ${rank}\nDepartment: ${department}`);
+            });
+        });
+    </script>
+</body>
+</html>

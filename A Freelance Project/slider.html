@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Sliders</title>
+  <link rel="stylesheet" href="sliderstyles.css">
+</head>
+<body>
+  <h1>Slider 1</h1>
+  <div class="slider-container" id="slider1">
+    <div class="slider">
+      <div class="slide"><img src="Annual Function SOB 01.jpeg" alt="Annual Function SOB 01"><p class="caption">Annual Function SOB 01</p></div>
+      <div class="slide"><img src="Annual Function SOB 02.jpg" alt="Annual Function SOB 02"><p class="caption">Annual Function SOB 02</p></div>
+<div class="slide"><img src="Annual Function SOB 03.jpg" alt="Annual Function SOB 03"><p class="caption">Annual Function SOB 03</p></div>
+<div class="slide"><img src="Bhant Bodhipalo Classroom.jpg" alt="Bhant Bodhipalo Classroom"><p class="caption">Bhant Bodhipalo Classroom</p></div>
+<div class="slide"><img src="Buddha-Sujata.jpg" alt="Buddha-Sujata"><p class="caption">Buddha-Sujata</p></div>
+<div class="slide"><img src="Certificate Distribution SOB.jpg" alt="Certificate Distribution SOB"><p class="caption">Certificate Distribution SOB</p></div>
+<div class="slide"><img src="Inauguration by Mr. Harshdip kamble 01.jpg" alt="Inauguration by Mr. Harshdip kamble 01"><p class="caption">Inauguration by Mr. Harshdip kamble 01</p></div>
+<div class="slide"><img src="Inauguration by Mr. Harshdip kamble 02.jpg" alt="Inauguration by Mr. Harshdip kamble 02"><p class="caption">Inauguration by Mr. Harshdip kamble 02</p></div>
+<div class="slide"><img src="Programme 01.jpg" alt="Programme 01"><p class="caption">Programme 01</p></div>
+<div class="slide"><img src="SOB Annual Function.jpg" alt="SOB Annual Function"><p class="caption">SOB Annual Function</p></div>
+<div class="slide"><img src="SOB Annual Summit.jpg" alt="SOB Annual Summit"><p class="caption">SOB Annual Summit</p></div>
+<div class="slide"><img src="SOB Classroom 01.jpg" alt="SOB Classroom 01"><p class="caption">SOB Classroom 01</p></div>
+<div class="slide"><img src="SOB Classroom 02.jpg" alt="SOB Classroom 02"><p class="caption">SOB Classroom 02</p></div>
+<div class="slide"><img src="SOB Classroom 03.jpg" alt="SOB Classroom 03"><p class="caption">SOB Classroom 03</p></div>
+<div class="slide"><img src="SOB Classroom 04.jpg" alt="SOB Classroom 04"><p class="caption">SOB Classroom 04</p></div>
+<div class="slide"><img src="SOB Classroom 05.jpg" alt="SOB Classroom 05"><p class="caption">SOB Classroom 05</p></div>
+<div class="slide"><img src="SOB Classroom 06.jpg" alt="SOB Classroom 06"><p class="caption">SOB Classroom 06</p></div>
+<div class="slide"><img src="SOB Classroom 07.jpg" alt="SOB Classroom 07"><p class="caption">SOB Classroom 07</p></div>
+<div class="slide"><img src="SOB Classroom 08.jpg" alt="SOB Classroom 08"><p class="caption">SOB Classroom 08</p></div>
+<div class="slide"><img src="speech by bhante bodhipalo new.jpg" alt="speech by bhante bodhipalo new"><p class="caption">Speech By Bhante Bodhipalo</p></div>
+</div>
+    <button class="prev" onclick="moveSlide('slider1', -1)">&#10094;</button>
+    <button class="next" onclick="moveSlide('slider1', 1)">&#10095;</button>
+  </div>
+
+  <h1>Slider 2</h1>
+  <div class="slider-container" id="slider2">
+    <div class="slider">
+      <div class="slide"><img src="Annual Function SOB 01" alt="Annual Function SOB 01"><p class="caption">Annual Function SOB 01</p></div>
+      <div class="slide"><img src="image12.jpg" alt="Image 12"><p class="caption">Slide 12 Name</p></div>
+      <!-- Add up to 10 images for Slider 2 -->
+    </div>
+    <button class="prev" onclick="moveSlide('slider2', -1)">&#10094;</button>
+    <button class="next" onclick="moveSlide('slider2', 1)">&#10095;</button>
+  </div>
+
+  <script>
+    const sliders = {
+      slider1: { index: 0, slideCount: document.querySelectorAll('#slider1 .slide').length },
+      slider2: { index: 0, slideCount: document.querySelectorAll('#slider2 .slide').length }
+    };
+
+    function moveSlide(sliderId, step) {
+        const sliderData = sliders[sliderId];
+        const sliderElement = document.querySelector(`#${sliderId} .slider`); // Use backticks for template literals
+        sliderData.index = (sliderData.index + step + sliderData.slideCount) % sliderData.slideCount;
+        sliderElement.style.transform = `translateX(-${sliderData.index * 100}%)`; // Use backticks and include '%' unit
+      }
+      </script>
+</body>
+</html>

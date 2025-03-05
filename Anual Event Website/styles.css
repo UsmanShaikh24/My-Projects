@@ -1,0 +1,875 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, rgb(58 43 63) 11%, rgb(0 0 0) 89%);
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For floating dots */
+}
+
+.header {
+    font-family: 'Times New Roman';
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10; /* Ensure the header stays on top */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Adjust images */
+#headerim1, #headerim2 {
+    height: auto;
+    position: left;
+}
+
+/* Specific image sizes */
+#headerim1 {
+    max-width: 62px;
+    left: 10%;
+}
+
+#headerim2 {
+    max-width: 86px;
+    left: -11%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablets and smaller screens */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    #headerim1, #headerim2 {
+        max-width: 48px; /* Reduce image size for smaller screens */
+    }
+
+    #headerim1 {
+        left: 0; /* Reset positioning */
+    }
+
+    #headerim2 {
+        left: 0; /* Reset positioning */
+    }
+}
+
+@media (max-width: 480px) { /* Mobile phones */
+    .header {
+        padding: 15px;
+    }
+
+    #headerim1, #headerim2 {
+        max-width: 40px; /* Further reduce size for mobile screens */
+    }
+
+    #headerim1, #headerim2 {
+        left: 0; /* Center align images on mobile */
+    }
+}
+
+/* Styling for the text block with managing society, college name, and university */
+.college-info {
+    text-align: center;
+}
+
+.managing-society {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.college-name {
+    font-size: 40px;
+    color: rgb(41, 54, 174);
+    font-weight: bold;
+}
+
+.university-affiliation {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.main-content {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 16.5em;
+}
+
+.main-content h1 {
+    font-size: 110px;
+    font-weight: bold;
+    color: #00fffb; /* Fallback color for older browsers */
+    margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden; /* Ensure reflection does not overflow */
+    background: linear-gradient(90deg, #00fffb 0%, #ff6b00 20%, #00fffb 50%, #ff007a 70%, #00eaff 100%); /* Gradient on both sides */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+    background-clip: text;
+}
+
+.main-content h2 {
+    font-size: 110px;
+    font-weight: bold;
+    color: #00fffb; /* Fallback color for older browsers */
+    margin-top: 10px; /* Add margin to separate from h1 */
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden; /* Ensure reflection does not overflow */
+    background: linear-gradient(90deg, #00fffb 0%, #ff6b00 27%, #00fffb 50%, #ff007a 75%, #00eaff 100%); /* Gradient on both sides */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+    background-clip: text;
+}
+
+/* Floating dots */
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(-100vh + 60px));
+        opacity: 0;
+    }
+}
+
+.dot {
+    position: fixed;
+    bottom: -50px; /* Start dots below the page */
+    background-color: #00ffcc; /* Neon green-blue */
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.7), 0 0 30px rgba(0, 255, 204, 0.5); /* Glowing effect */
+    animation: floatUp 5s infinite ease-in; /* Reduced time to 5s for faster movement */
+    opacity: 0;
+    z-index: 1; /* Ensure dots stay behind content */
+    left: calc(100% * var(--x-pos)); /* Random horizontal position */
+}
+
+.dot:nth-child(2) {
+    background-color: #ff66cc; /* Neon pink */
+    box-shadow: 0 0 20px rgba(255, 102, 204, 0.7), 0 0 30px rgba(255, 102, 204, 0.5);
+    animation-duration: 4s; /* Speeding up the dots */
+    animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+    background-color: #66ff66; /* Neon green */
+    box-shadow: 0 0 20px rgba(102, 255, 102, 0.7), 0 0 30px rgba(102, 255, 102, 0.5);
+    animation-duration: 3s; /* Speeding up */
+    animation-delay: 0.9s;
+}
+
+.dot:nth-child(4) {
+    background-color: #ff9933; /* Neon orange */
+    box-shadow: 0 0 20px rgba(255, 153, 51, 0.7), 0 0 30px rgba(255, 153, 51, 0.5);
+    animation-duration: 4s;
+    animation-delay: 0.8s;
+}
+
+.dot:nth-child(5) {
+    background-color: #0099ff; /* Neon blue */
+    box-shadow: 0 0 20px rgba(0, 153, 255, 0.7), 0 0 30px rgba(0, 153, 255, 0.5);
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.dot:nth-child(6) {
+    background-color: #ece8e5; /* Neon orange */
+    box-shadow: 0 0 20px rgba(232, 203, 174, 0.7), 0 0 30px rgba(193, 173, 152, 0.5);
+    animation-duration: 4s;
+    animation-delay: 3s;
+}
+
+.dot:nth-child(7) {
+    background-color: #ff3333; /* Neon orange */
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.7), 0 0 30px rgba(255, 51, 51, 0.5);
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.dot:nth-child(8) {
+    background-color: #6333ff; /* Neon orange */
+    box-shadow: 0 0 20px rgba(126, 51, 255, 0.7), 0 0 30px rgba(51, 88, 255, 0.5);
+    animation-duration: 4s;
+    animation-delay: 0.5s;
+}
+
+.dot:nth-child(9) {
+    background-color: #4eff33; /* Neon orange */
+    box-shadow: 0 0 20px rgba(71, 255, 51, 0.7), 0 0 30px rgba(51, 255, 82, 0.5);
+    animation-duration: 4s;
+    animation-delay: 1s;
+}
+
+.dot:nth-child(10) {
+    background-color: #ff33a0; /* Neon orange */
+    box-shadow: 0 0 20px rgba(255, 51, 241, 0.7), 0 0 30px rgba(255, 51, 245, 0.5);
+    animation-duration: 4s;
+    animation-delay: 0.5s;
+}
+
+.dot:nth-child(11) {
+    background-color: #ff33d3; /* Neon orange */
+    box-shadow: 0 0 20px rgba(255, 51, 173, 0.7), 0 0 30px rgba(255, 51, 173, 0.5);
+    animation-duration: 4s;
+    animation-delay: 0.6s;
+}
+
+.dot:nth-child(12) {
+    background-color: #33ff33; /* Neon orange */
+    box-shadow: 0 0 20px rgba(51, 255, 112, 0.7), 0 0 30px rgba(51, 255, 88, 0.5);
+    animation-duration: 4s;
+    animation-delay: 0.85s;
+}
+
+.dot:nth-child(13) {
+    background-color: #33ffe4; /* Neon orange */
+    box-shadow: 0 0 20px rgba(51, 241, 255, 0.7), 0 0 30px rgba(51, 218, 255, 0.5);
+    animation-duration: 4s;
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(14) {
+    background-color: #ff3333; /* Neon orange */
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.7), 0 0 30px rgba(255, 51, 51, 0.5);
+    animation-duration: 4s;
+    animation-delay: 0.9s;
+}
+
+.dot:nth-child(15) {
+    background-color: #3d33ff; /* Neon orange */
+    box-shadow: 0 0 20px rgba(68, 51, 255, 0.7), 0 0 30px rgba(58, 51, 255, 0.5);
+    animation-duration: 5s;
+    animation-delay: 0.1s;
+}
+
+.dot:nth-child(16) {
+    background-color: #fffc33; /* Neon orange */
+    box-shadow: 0 0 20px rgba(231, 255, 51, 0.7), 0 0 30px rgba(235, 255, 51, 0.5);
+    animation-duration: 6s;
+    animation-delay: 0.2s;
+}
+/* Additional dot size variation */
+.dot {
+    width: 20px;
+    height: 20px;
+    --x-pos: 0.5; /* Default position in the middle */
+}
+
+.dot:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    --x-pos: 0.2; /* 20% from the left */
+}
+
+.dot:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    --x-pos: 0.8; /* 80% from the left */
+}
+
+.dot:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    --x-pos: 0.4; /* 40% from the left */
+}
+
+.dot:nth-child(5) {
+    width: 25px;
+    height: 25px;
+    --x-pos: 0.6; /* 60% from the left */
+}
+
+.dot:nth-child(6) {
+    width: 30px;
+    height: 30px;
+    --x-pos: 0.9; /* 70% from the left */
+}
+
+.dot:nth-child(7) {
+    width: 45px;
+    height: 45px;
+    --x-pos: 0; /* 10% from the left */
+}
+
+.dot:nth-child(8) {
+    width: 25px;
+    height: 25px;
+    --x-pos: 0.35; /* 35% from the left */
+}
+
+.dot:nth-child(9) {
+    width: 25px;
+    height: 25px;
+    --x-pos: 0.15; /* 15% from the left */
+}
+
+.dot:nth-child(10) {
+    width: 20px;
+    height: 20x;
+    --x-pos: 0.85; /* 85% from the left */
+}
+
+.dot:nth-child(11) {
+    width: 45px;
+    height: 45px;
+    --x-pos: 0.8; /* 80% from the left */
+}
+
+.dot:nth-child(12) {
+    width: 45px;
+    height: 45px;
+    --x-pos: 0.83; /* 83% from the left */
+}
+.dot:nth-child(13) {
+    width: 30px;
+    height: 30px;
+    --x-pos: 0.9; /* 90% from the left */
+}
+.dot:nth-child(14) {
+    width: 40px;
+    height: 40px;
+    --x-pos: 0.95; /* 95% from the left */
+}
+.dot:nth-child(15) {
+    width: 45px;
+    height: 45px;
+    --x-pos: 0.75; /* 60% from the left */
+}
+
+.dot:nth-child(15) {
+    width: 25px;
+    height: 25px;
+    --x-pos: 0.7; /* 60% from the left */
+}
+
+.dot img {
+    width: 13vw; /* Set the image width relative to the viewport width */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove extra space around the image */
+    margin: auto; /* Center the image inside the dot container */
+}
+
+/* Leaderboard Section */
+.leaderboard-section {
+    position: relative;
+    top: 20em;
+    padding: 50px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
+
+.leaderboard-section h3 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #00fffb;
+}
+
+/* Leaderboard Table */
+.leaderboard {
+    width: 35%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: linear-gradient(145deg, rgba(58, 43, 63, 0.8), rgba(0, 0, 0, 0.6)); /* Gradient background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    border-radius: 15px; /* Smooth rounded corners */
+    overflow: hidden;
+    color: white;
+    font-size: 18px;
+}
+
+/* Table Headers */
+.leaderboard th {
+    border: 1px solid rgba(255, 255, 255, 0.3);  /* Transparent border */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #00fffb;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+/* Table Rows */
+.leaderboard td {
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+/* Hover Effect */
+.leaderboard tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light hover */
+    color: #00fffb;
+    transform: scale(1.03); /* Slight scaling on hover */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Space before the Events Section */
+.events-section {
+    position: relative;
+    padding: 50px;
+    margin-top: 15em; /* Added margin to move the section down */
+    text-align: center;
+}
+
+.events-section h3 {
+    position: relative;
+    font-size: 50px;
+    color: #81e6d9; /* Match the heading color */
+    margin-bottom: 20px;
+}
+
+/* Cards Styling with Reduced Size */
+.cards {
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    max-width: 30em; /* Reduced max width */
+    margin: 1px auto;
+}
+
+
+.card div {
+    font-size: 1.5em; /* Adjust the font size here */
+    font-weight: bold; /* Optional: make the text bold */
+    margin-bottom: 10px; /* Space below the text */
+}
+.card {
+    margin-top: 1.3em;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background: #ccc;
+    border-radius: 30px; /* Reduced border-radius */
+    box-shadow: 0 0 40px #000; /* Slightly reduced shadow */
+    transform: translateY(0) rotate(4deg) translateX(15px) scale(0.85); /* Scaled down */
+    transform-origin: 0 0;
+    transition: transform 0.6s cubic-bezier(.8,.2,.1,0.8) 0.1s, background 0.4s linear;
+    cursor: pointer;
+    user-select: none;
+    width: 80%; /* Reduced width */
+}
+
+.card img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Reduced border-radius for the image */
+    cursor: pointer;
+}
+
+.card--next { 
+    z-index: 5; 
+    transform: translateY(-20px) rotate(4deg) translateX(15px) scale(0.85);
+}
+
+.card--out {
+    animation: card-out 0.6s cubic-bezier(.8,.2,.1,0.8);
+    transform: translateY(-40px) rotate(8deg) translateX(45px) scale(0.8);
+    z-index: 1;
+    background: #bbb;
+}
+
+@keyframes card-out {
+    0% { z-index: 20; transform: translateY(0px) rotate(-4deg); }
+    50% { transform: translateY(-100%) rotate(-5deg) translateX(-30px); }
+    80% { z-index: 1; }
+    100% { transform: translateY(-40px) rotate(8deg) translateX(45px) scale(0.8); }
+}
+
+.card--current {
+    cursor: pointer;
+    user-select: auto;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    background: #EEE;
+    transform: rotate(-1deg) translateX(0%) scale(0.85); /* Scaled down */
+    pointer-events: none;
+}
+
+/* Ensure that cards behind the current card are clickable */
+.card {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+/* Event Schedule Section */
+.event-schedule-section {
+    position: relative;
+    padding: 50px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    margin-top: -5em; /* Adjust to add space below the event cards */
+}
+
+.event-schedule-section h3 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #00fffb;
+}
+
+/* Event Schedule Table */
+.event-schedule {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: linear-gradient(145deg, rgba(58, 43, 63, 0.8), rgba(0, 0, 0, 0.6)); /* Gradient background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    border-radius: 15px; /* Smooth rounded corners */
+    overflow: hidden;
+    color: white;
+    font-size: 18px;
+}
+
+.event-schedule th, .event-schedule td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Transparent border */
+}
+
+.event-schedule th {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker transparent header */
+    color: #00fffb;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.event-schedule tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light hover */
+    color: #00fffb;
+    transform: scale(1.03); /* Slight scaling on hover */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Event login styling*/
+.game-name{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.game-name h1{
+    position: relative;
+    font-size:5em;
+    color: #00eaff;
+    margin: 0em;
+}
+
+.event1-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 0px; /* Adjust spacing between header and content */
+    padding: 20px;
+    width: 100%; /* Full width of the container */
+    box-sizing: border-box;
+}
+
+.game-rules{
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 16.5px;
+    border-radius: 19px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 51%;
+    color: #fff; /* Ensure text is readable */
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 19px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 33%;
+    color: #fff; /* Ensure text is readable */
+}
+
+.game-rules h2, .login-form h2 {
+    color: #00fffb; /* Same text color as other headings */
+}
+
+.rules-list {
+    display: grid;
+    justify-items: left;
+    list-style-type: none; /* Removes the bullets from the list */
+    padding: 0;           /* Removes default padding */
+    margin: 0;            /* Removes default margin */
+}
+
+.rules-list li {
+    margin-bottom: 10px;  /* Adds space between list items */
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between form elements */
+}
+
+.form-group label {
+    color: #81e6d9; /* Matching the styling */
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Container for centering the button */
+.form-container {
+    display: flex;
+    justify-content: center;  /* Centers the button horizontally */
+}
+
+button {
+    background-color: #81e6d9;
+    color: #2E003E;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+
+button:hover {
+    background-color: #00fffb;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    button {
+        width: 70%;        /* Wider width on smaller screens */
+        max-width: none;  /* Remove max width restriction */
+    }
+}
+
+/* Make sure it's responsive on smaller devices */
+@media (max-width: 768px) {
+    .event1-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-rules, .login-form {
+        width: 90%; /* Take more space on smaller screens */
+        margin-bottom: 20px; /* Add spacing between the sections */
+    }
+}
+
+/* Container for the podium */
+/* Container for the podium */
+/* Container for the podium */
+/* Container for the podium */
+/* Container for the podium */
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 40px 0;
+  }
+  
+  .podium-item {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .first-place {
+    background: linear-gradient(145deg, #ffeb3b, #f0c83f);
+    height: 220px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .second-place {
+    background: linear-gradient(145deg, #c0c0c0, #d3d3d3);
+    height: 180px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .third-place {
+    background: linear-gradient(145deg, #cd7f32, #c96f2b);
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .rank {
+    font-size: 36px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .department {
+    font-size: 25px;
+    padding: 10px 0;
+    color: black;
+  }
+  
+  .medal {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .gold-medal {
+    background: url('first.jpg') no-repeat center center / contain;
+    width: 80px;
+    height: 450px;
+  }
+  
+  .silver-medal {
+    background: url('second.jpg') no-repeat center center / contain;
+    width: 80px;
+    height: 370px;
+
+  }
+  
+  .bronze-medal {
+    background: url('third.jpg') no-repeat center center / contain;
+    width: 80px;
+    height: 310px;
+}
+  
+  /* 3D effect styling for podiums */
+  .podium-item::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: -10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 100px 100px 100px 100px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  }
+    
+
+.student-form {
+    display: grid;
+    gap: 1em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+.form-group input, .form-group select {
+    padding: 10px;
+    border: 1px solid #81e6d9;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #81e6d9;
+    color: #2E003E;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: #62c5ba;
+}
+
+/* Styles for the popup */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f00;
+}
